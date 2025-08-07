@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Search, ShoppingBag, User, Menu, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeOut, easeIn, easeInOut } from "framer-motion";
 
 // Type definitions
 interface DropdownItem {
@@ -149,7 +149,7 @@ const dropdownVariants = {
     y: -10,
     transition: {
       duration: 0.2,
-      ease: "easeOut"
+      ease: easeOut
     }
   },
   visible: {
@@ -157,7 +157,7 @@ const dropdownVariants = {
     y: 0,
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: easeOut,
       staggerChildren: 0.05,
       delayChildren: 0.1
     }
@@ -167,7 +167,7 @@ const dropdownVariants = {
     y: -5,
     transition: {
       duration: 0.2,
-      ease: "easeIn"
+      ease: easeIn
     }
   }
 };
@@ -182,7 +182,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.2,
-      ease: "easeOut"
+      ease: easeOut
     }
   }
 };
@@ -190,11 +190,11 @@ const itemVariants = {
 const chevronVariants = {
   closed: {
     rotate: 0,
-    transition: { duration: 0.2, ease: "easeOut" }
+    transition: { duration: 0.2, ease: easeOut }
   },
   open: {
     rotate: 180,
-    transition: { duration: 0.2, ease: "easeOut" }
+    transition: { duration: 0.2, ease: easeOut }
   }
 };
 
@@ -204,14 +204,14 @@ const mobileMenuVariants = {
     x: "100%",
     transition: {
       duration: 0.3,
-      ease: "easeInOut"
+      ease: easeInOut
     }
   },
   open: {
     x: 0,
     transition: {
       duration: 0.3,
-      ease: "easeInOut",
+      ease: easeInOut,
       staggerChildren: 0.05,
       delayChildren: 0.1
     }
@@ -228,7 +228,7 @@ const mobileItemVariants = {
     opacity: 1,
     transition: {
       duration: 0.2,
-      ease: "easeOut"
+      ease: easeOut
     }
   }
 };
@@ -296,7 +296,7 @@ const MobileNavigationItem: React.FC<MobileNavigationItemProps> = ({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: easeOut }}
             className="overflow-hidden bg-gray-50"
           >
             <div className="pb-4">
@@ -337,6 +337,7 @@ const MobileNavigationItem: React.FC<MobileNavigationItemProps> = ({
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  className?: string;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {

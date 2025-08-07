@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s | VESSEL Golf Clone"
   },
   icons: {
-    icon: './vessel-icon.webp'
+    icon: './icon.png'
   },
   description: "Discover premium golf equipment, luxury golf bags, and professional golf accessories. Shop the finest collection of golf gear designed for performance and style.",
   keywords: ["golf bags", "luxury golf equipment", "premium golf gear", "golf accessories", "professional golf", "golf cart bags", "stand bags", "golf headcovers"],
