@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header/Header";
 import MarqueeHeader from "@/components/layout/Header/Marquee";
+import Footer from "@/components/layout/Footer/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -121,12 +122,12 @@ export default function RootLayout({
           </header>
 
           {/* Main content */}
-          <main id="main-content" className="flex-1">
+          <main id="main-content" className="flex-1 pb-18">
             {children}
           </main>
 
           <footer id="footer">
-            {/* Footer content */}
+            <Footer/>
           </footer>
         </div>
 
